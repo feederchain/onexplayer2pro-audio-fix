@@ -1,44 +1,5 @@
 #!/bin/bash
 
-if [ "$(id -u)" -ne 0 ]; then
-    echo "This script should be run by root!" >&2
-    exit 1
-fi
-
-if ! command -v hda-verb >/dev/null; then
-    echo "hda-verb is required but not found in PATH. Please install alsa-tools first." >&2
-    exit 2
-fi
-
-# Default: not auto-confirmed
-AUTO_CONFIRM=0
-
-# Parse command-line options
-while getopts "y" opt; do
-  case $opt in
-    y)
-      AUTO_CONFIRM=1
-      ;;
-    *)
-      ;;
-  esac
-done
-
-# Confirmation logic
-if [ "$AUTO_CONFIRM" -ne 1 ]; then
-  echo -n "These verbs were generated from my ONEXPLAYER 2 PRO (8840u), I'm not sure whether it works for your machine. USE ON YOUR OWN RISK!!! continue [y/N] " >&2
-  read confirm
-  if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
-    echo "Skip" >&2
-    exit
-  fi
-else
-  echo "Auto-confirmed with -y flag" >&2
-fi
-
-time run_verbs
-
-
 run_verbs() {
     # echo "00010048: hda-verb /dev/snd/hwC1D0 0x20 0x500 0x00"
     hda-verb /dev/snd/hwC1D0 0x20 0x500 0x00 >/dev/null 2>&1
@@ -11667,3 +11628,42 @@ run_verbs() {
     # echo "01210260: hda-verb /dev/snd/hwC1D0 0x20 0x500 0x29"
     hda-verb /dev/snd/hwC1D0 0x20 0x500 0x29 >/dev/null 2>&1
 }
+
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "This script should be run by root!" >&2
+    exit 1
+fi
+
+if ! command -v hda-verb >/dev/null; then
+    echo "hda-verb is required but not found in PATH. Please install alsa-tools first." >&2
+    exit 2
+fi
+
+# Default: not auto-confirmed
+AUTO_CONFIRM=0
+
+# Parse command-line options
+while getopts "y" opt; do
+  case $opt in
+    y)
+      AUTO_CONFIRM=1
+      ;;
+    *)
+      ;;
+  esac
+done
+
+# Confirmation logic
+if [ "$AUTO_CONFIRM" -ne 1 ]; then
+  echo -n "These verbs were generated from a ONEXPLAYER 2 PRO (8840u), I can't be sure it will work for you. USE ON YOUR OWN RISK!!! continue [y/N] " >&2
+  read confirm
+  if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
+    echo "Skip" >&2
+    exit
+  fi
+else
+  echo "Auto-confirmed with -y flag" >&2
+fi
+
+time run_verbs
