@@ -7,13 +7,6 @@ This guide walks you through enabling internal speaker audio on the **OneXPlayer
 >This fix uses `hda-verb` to send low-level audio commands. While widely used, it carries some risk of audio instability or hardware issues.  
 >**Use at your own risk.**
 
----
-
-## 🧰 Requirements
-
-- OneXPlayer 2 Pro with Bazzite
-- `alsa-tools` installed
-- Internet access to download the fix script
 
 ---
 
