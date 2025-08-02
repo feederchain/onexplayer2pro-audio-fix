@@ -2,6 +2,11 @@
 
 This guide walks you through enabling internal speaker audio on the **OneXPlayer 2 Pro**. By default, internal speakers may not work out of the box, but a script resolves the issue with a little setup.
 
+>⚠️  Note on `hda-verb` Use
+>
+>This fix uses `hda-verb` to send low-level audio commands. While widely used, it carries some risk of audio instability or hardware issues.  
+>**Use at your own risk.**
+
 ---
 
 ## 🧰 Requirements
