@@ -1,4 +1,4 @@
-# ✅ How to Fix Internal Speakers on the OneXPlayer 2 Pro (7840U)
+# ✅ How to Fix Internal Speakers on the OneXPlayer 2 Pro (7840U/8840U)
 
 This guide walks you through enabling internal speaker audio on the **OneXPlayer 2 Pro**. By default, internal speakers may not work out of the box, but a script resolves the issue with a little setup.
 
