@@ -54,7 +54,7 @@ Requires=sound.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/oxp2p-audio-fix.sh -y
+ExecStart=/bin/bash -c '/usr/local/bin/oxp2p-audio-fix.sh -y'
 RemainAfterExit=true
 
 [Install]
