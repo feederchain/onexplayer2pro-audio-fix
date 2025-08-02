@@ -25,6 +25,7 @@ Download `oxp2p-audio-fix.sh`
 ```bash
 sudo rpm-ostree install alsa-tools
 ```
+A reboot will be recommended after the install is complete.
 
 ---
 
@@ -61,7 +62,7 @@ RemainAfterExit=true
 WantedBy=multi-user.target
 ```
 
----
+--- 
 
 ### 5. **Enable and Start the Service**
 
@@ -74,6 +75,6 @@ sudo systemctl start fix_audio.service
 ---
 
 ## 🎉 Done!
-
-After a reboot, your internal speakers should work as expected. If you reinstall the OS or reset your system, just re-follow this guide.
+The internal speakers should be working at this point.  
+After a reboot, they should continue to work. If you reinstall the OS or reset your system, just re-follow this guide.
 
