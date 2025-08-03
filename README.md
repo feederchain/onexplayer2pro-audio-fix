@@ -14,8 +14,12 @@ This guide walks you through enabling internal speaker audio on the **OneXPlayer
 
 ### 1. **Download the Script**
 
-Download `oxp2p-audio-fix.sh`  
-All credit for this script goes to fortime2024 from the [One-netbook official Discord](https://discord.com/channels/547366894995243029/1210923924439699516/1399685604932849726) and [here](https://github.com/ChimeraOS/chimeraos/issues/742#issuecomment-2250951477)
+Create a directory in /home/bazzite
+```bash
+mkdir oxp2p-audio-fix
+```
+Download `oxp2p-audio-fix.sh` into the newly created directory  
+>All credit for this script goes to fortime2024 from the [One-netbook official Discord](https://discord.com/channels/547366894995243029/1210923924439699516/1399685604932849726) and [here](https://github.com/ChimeraOS/chimeraos/issues/742#issuecomment-2250951477)
 
 ---
 
@@ -28,12 +32,10 @@ A reboot will be recommended after the install is complete.
 
 ---
 
-### 3. **Move Script to System Path and Set Permissions**
+### 3. **Make script executable**
 
 ```bash
-sudo mv oxp2p-audio-fix.sh /usr/local/bin/
-sudo chown root:root /usr/local/bin/oxp2p-audio-fix.sh
-sudo chmod +x /usr/local/bin/oxp2p-audio-fix.sh
+sudo chmod +x /home/bazzite/oxp2p-audio-fix/oxp2p-audio-fix.sh
 ```
 
 ---
@@ -54,7 +56,7 @@ Requires=sound.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/usr/local/bin/oxp2p-audio-fix.sh -y'
+ExecStart=/bin/bash -c '/home/bazzite/oxp2p-audio-fix/oxp2p-audio-fix.sh -y'
 RemainAfterExit=true
 
 [Install]
@@ -76,4 +78,3 @@ sudo systemctl start fix_audio.service
 ## 🎉 Done!
 The internal speakers should be working at this point.  
 After a reboot, they should continue to work. If you reinstall the OS or reset your system, just re-follow this guide.
-
