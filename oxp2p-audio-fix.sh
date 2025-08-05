@@ -36,7 +36,7 @@ else
   echo "Auto-confirmed with -y flag" >&2
 fi
 
-CONFIG="/etc/oxp-audio-fix/hda-verbs.conf"
+CONFIG="hda-verbs.conf"
 DEVICE="/dev/snd/hwC1D0"
 
 if [[ ! -f "$CONFIG" ]]; then
