@@ -18,8 +18,8 @@ Create a directory in /home/bazzite
 ```bash
 mkdir oxp2p-audio-fix
 ```
-Download `oxp2p-audio-fix.sh` into the newly created directory  
->All credit for this script goes to fortime2024 from the [One-netbook official Discord](https://discord.com/channels/547366894995243029/1210923924439699516/1399685604932849726) and [here](https://github.com/ChimeraOS/chimeraos/issues/742#issuecomment-2250951477)
+Download `oxp2p-audio-fix.sh` and `hda-verbs.conf` into the newly created directory  
+>All credit for this script and verbs goes to fortime2024 from the [One-netbook official Discord](https://discord.com/channels/547366894995243029/1210923924439699516/1399685604932849726) and [here](https://github.com/ChimeraOS/chimeraos/issues/742#issuecomment-2250951477)
 
 ---
 
